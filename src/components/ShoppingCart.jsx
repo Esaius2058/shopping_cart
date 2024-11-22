@@ -1,6 +1,5 @@
 const Cart = ({cartList, cartCounter, cartTracker, handleChange}) => {
     const total = cartList.reduce((sum, item) => sum + item.price, 0);
-    console.log(cartList);
 
 		const uniqueCartList = cartList.filter(
 			(item, index, self) => index === self.findIndex((t) => t.id === item.id)
