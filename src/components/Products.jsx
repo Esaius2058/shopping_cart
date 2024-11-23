@@ -1,6 +1,15 @@
 import Cart from "./ShoppingCart";
+import { useContext } from "react";
+import { ShopContext } from "./ShopContext";
 
-const ProductList = ({products, cartList, cartCounter, message, addToCart, cartTracker, handleChange}) => {
+const ProductList = () => {
+  const {products, cartList, cartCounter, message, addToCart, cartTracker, handleChange, error} = useContext(ShopContext);
+
+  if (!products || products.length === 0){
+    return <div>Products are currently being restocked.</div>
+  }
+
+  if (error) return <div>{error}</div>
 
   return (
     <>
