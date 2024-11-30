@@ -1,19 +1,19 @@
 import { useContext } from "react";
 import { ShopContext } from "./ShopContext";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { cartList, cartCounter, cartTracker, handleChange, error } = useContext(ShopContext);
+  const { cartList, cartCounter, cartTracker, handleChange} = useContext(ShopContext);
   const total = cartList.reduce((sum, item) => sum + item.price, 0);
 
   const uniqueCartList = cartList.filter(
     (item, index, self) => index === self.findIndex((t) => t.id === item.id)
   );
 
-  if (error) return <div>{error}</div>
-  
   return (
     <div className="cart-container">
       <h2>Shopping Cart</h2>
+      <Link to="/shop">Shop</Link>
       {uniqueCartList.map((item) => (
         <div key={item.id} className="cart-item">
           <img src={item.thumbnail} alt={item.title} />
