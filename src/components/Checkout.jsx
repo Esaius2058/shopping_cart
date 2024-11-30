@@ -2,13 +2,12 @@ import { useContext } from "react";
 import { ShopContext } from "./ShopContext";
 
 const Checkout = () => {
-  const { cartCounter, cartList, error } = useContext(ShopContext);
+  const { cartCounter, cartList} = useContext(ShopContext);
   const total = cartList.reduce((sum, item) => sum + item.price, 0);
   const uniqueCartList = cartList.filter(
     (item, index, self) => index === self.findIndex((t) => t.id === item.id)
   );
 
-  if (error) return <div>{error}</div>
   return (
     <>
       <div className="checkout">
