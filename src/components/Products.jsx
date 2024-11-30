@@ -1,25 +1,33 @@
-import Cart from "./ShoppingCart";
 import { useContext } from "react";
 import { ShopContext } from "./ShopContext";
+import { Link } from "react-router-dom";
+import HomeIcon from "../assets/home_icon";
+import ShoppingCartIcon from "../assets/shoppingcart_icon";
 
 const ProductList = () => {
-  const {products, cartList, cartCounter, message, addToCart, cartTracker, handleChange, error} = useContext(ShopContext);
+  const {products,cartCounter, message, addToCart} = useContext(ShopContext);
 
   if (!products || products.length === 0){
     return <div>Products are currently being restocked.</div>
   }
 
-  if (error) return <div>{error}</div>
-
   return (
     <>
+      <div className="products-header">
+        <Link to="/">
+          <HomeIcon />
+        </Link>
+        <Link to="cart">
+          <ShoppingCartIcon />
+        </Link>
+      </div>
       <div className="cart-info">
         <p>Cart Items: {cartCounter}</p>
         <p>{message}</p>
       </div>
       <div className="products-container">
         {products.map((product) => (
-          <div key={product.id}>
+          <div key={product.id} className="grid-item-shop">
             <button>
               <img src={product.thumbnail} alt={product} />
               <div className="price-title">
@@ -36,7 +44,6 @@ const ProductList = () => {
           </div>
         ))}
       </div>
-      <Cart cartList={cartList} cartCounter={cartCounter} cartTracker={cartTracker} handleChange={handleChange}/>
     </>
   );
 };
