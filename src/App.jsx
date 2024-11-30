@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "./App.css";
 import { ShopContext } from "./components/ShopContext";
 import { Outlet } from "react-router-dom";
@@ -75,13 +74,10 @@ function App() {
     }
   };
 
-
   if (error) return <div>{error}</div>;
 
   return (
-    <div>
-      <Link to="shop">Shop</Link>
-      <ShopContext.Provider
+    <ShopContext.Provider
       value={{
         products,
         cartList,
@@ -93,9 +89,10 @@ function App() {
         error,
       }}
     >
-      <Outlet />
+      <div className="app-container">
+        <Outlet />
+      </div>
     </ShopContext.Provider>
-    </div>
   );
 }
 
