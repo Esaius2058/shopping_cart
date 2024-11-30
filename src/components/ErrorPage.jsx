@@ -1,19 +1,14 @@
-import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { ShopContext } from "./ShopContext";
+import { Link, useRouteError } from "react-router-dom";
 
 const ErrorPage = () => {
-  const { error } = useContext(ShopContext);
+  const error = useRouteError();
   return (
     <>
-      {error ? (
-        <div>{error}</div>
-      ) : (
-        <div>
-          <h1>Page not found!</h1>
-          <Link to="/home">Back to home page.</Link>
-        </div>
-      )}
+      <div>
+        <h1>Something went wrong.</h1>
+        <div>{error?.message || "Page not found"}</div>
+        <Link to="/">Back to home page.</Link>
+      </div>
     </>
   );
 };
