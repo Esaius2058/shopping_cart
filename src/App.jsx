@@ -24,7 +24,6 @@ function App() {
         }
         const data = await response.json();
         setProducts(data.products);
-        console.log(data);
       } catch (err) {
         console.error(err);
         setError(err.message);
