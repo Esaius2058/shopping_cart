@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent} from "@testing-library/react";
 import { vi } from "vitest";
 import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
@@ -78,7 +78,10 @@ describe("Shopping Cart", () => {
 	it("cart tracker and handlechange are working correctly", async () => {
 		renderCart();
 
-		const inputButtons = expect(screen.getAllByRole("spinbutton"));
+		const inputButtons = screen.getAllByRole("spinbutton");
 		expect(mockCartTracker).toHaveBeenCalled(); //cart tracker
+		fireEvent.change(inputButtons[0], {target: {value: "2"}});
+		expect(inputButtons[0].value).toBe("2");// increment number of items which fires handlechange
+		expect(mockHandleChange).toHaveBeenCalled();
 	});
 });
