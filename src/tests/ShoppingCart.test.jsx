@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { render, screen, fireEvent} from "@testing-library/react";
 import { vi } from "vitest";
-import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
 import { ShopContext } from "../components/ShopContext";
 import Cart from "../components/ShoppingCart";
@@ -35,7 +34,6 @@ const mockCartList = [
 const mockCartCounter = mockCartList.length;
 const mockCartTracker = vi.fn();
 const mockHandleChange = vi.fn();
-const user = userEvent.setup();
 
 const renderCart = () => {
   render(
