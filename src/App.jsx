@@ -9,6 +9,7 @@ function App() {
   const [cartList, setCartList] = useState([]);
   const [cartCounter, setCartCounter] = useState(0);
   const [message, setMessage] = useState(null);
+  const [showMessage, setShowMessage] = useState(false);
 
   useEffect(() => {
     const fetchProductData = async () => {
@@ -37,13 +38,31 @@ function App() {
     if (!cartList.includes(item)) {
       setCartList((prev) => [...prev, item]);
       setCartCounter((prevCounter) => prevCounter + 1);
-      setMessage("Added to cart");
+      showScreenMessage(`Added ${item.title} to cart`);
     } else {
       setCartList((prev) => [...prev, item]);
       setCartCounter((cartCounter) => cartCounter + 1);
-      setMessage("Added to cart");
+      showScreenMessage(`Added ${item.title} to cart`);
     }
   };
+
+  const clearCart = () => {
+    if(cartList.length > 0 && confirm("Clear all items in cart?")){
+      setCartList([]);
+      setCartCounter(0);
+    }else if(cartList.length == 0){
+      showScreenMessage("No items in cart")
+    }
+  }
+
+  const showScreenMessage = (msg) => {
+    setMessage(msg);
+    setShowMessage(true);
+
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 5000);
+  }
 
   const cartTracker = (item, cartList) => {
     var itemCounter = 0;
@@ -69,9 +88,17 @@ function App() {
 
       setCartList(updatedCart);
       setCartCounter(updatedCart.length);
-      setMessage(`Added ${newQuantity} of ${product.title}`);
+      if(e.target.value > 0){
+        showScreenMessage(`Updated cart to ${newQuantity} ${product.title}`);
+      }else{
+        showScreenMessage(`Removed ${product.title}`);
+      }
     }
   };
+
+  const checkoutDummy = () => {
+    showScreenMessage("Not enough coins in your e-wallet");
+  }
 
   if (error) return <div>{error}</div>;
 
@@ -84,8 +111,12 @@ function App() {
         message,
         addToCart,
         cartTracker,
+        clearCart,
         handleChange,
+        checkoutDummy,
         error,
+        showMessage,
+        showScreenMessage,
       }}
     >
       <div className="app-container">
