@@ -4,7 +4,7 @@ import { ShopContext } from "./ShopContext";
 import ShoppingCartIcon from "../assets/shoppingcart_icon";
 
 const HomePage = () => {
-  const { products } = useContext(ShopContext);
+  const { products, cartCounter } = useContext(ShopContext);
 
   return (
     <div className="home-page">
@@ -14,19 +14,20 @@ const HomePage = () => {
         </div>
         <div className="nav-container">
           <nav className="nav-bar">
-            <Link to="/shop">Shop</Link>
-            <Link to="cart">
+            <Link to="/shop">SHOP</Link>
+            <Link to="/shop/cart" className="cart-icon">
               <ShoppingCartIcon />
+              <p>{cartCounter}</p>
             </Link>
           </nav>
         </div>
       </div>
       <div className="intro">
-          <p>
-            Discover a world of variety and charm at DIGERO, your one-stop shop
-            for unique and everyday essentials.
-          </p>
-        </div>
+        <p>
+          Discover a world of variety and charm at DIGERO, your one-stop shop
+          for unique and everyday essentials.
+        </p>
+      </div>
       <div className="body">
         <div className="product-wrapper">
           <h2>Beauty Products</h2>
