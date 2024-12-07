@@ -14,7 +14,7 @@ const HomePage = () => {
         </div>
         <div className="nav-container">
           <nav className="nav-bar">
-            <Link to="/shop">SHOP</Link>
+            <Link to="/shop" className="link">SHOP</Link>
             <Link to="/shop/cart" className="cart-icon">
               <ShoppingCartIcon />
               <p>{cartCounter}</p>
@@ -41,7 +41,7 @@ const HomePage = () => {
                 />
               </div>
             ))}
-            <Link to="/shop">Shop Now</Link>
+            <Link to="/shop" className="link">Shop Now</Link>
           </div>
         </div>
         <div className="product-wrapper">
@@ -56,7 +56,7 @@ const HomePage = () => {
                 />
               </div>
             ))}
-            <Link to="/shop">Shop Now</Link>
+            <Link to="/shop" className="link">Shop Now</Link>
           </div>
         </div>
         <div className="product-wrapper">
@@ -71,7 +71,7 @@ const HomePage = () => {
                 />
               </div>
             ))}
-            <Link to="/shop">Shop Now</Link>
+            <Link to="/shop" className="link">Shop Now</Link>
           </div>
         </div>
         <div className="product-wrapper">
@@ -86,7 +86,7 @@ const HomePage = () => {
                 />
               </div>
             ))}
-            <Link to="/shop">Shop Now</Link>
+            <Link to="/shop" className="link">Shop Now</Link>
           </div>
         </div>
       </div>
