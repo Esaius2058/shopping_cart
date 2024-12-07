@@ -20,7 +20,7 @@ const Cart = () => {
   );
 
   return (
-    <div>
+    <div className="cart-body">
       <div className="cart-header">
         <div className="products-header">
           <div className="home-icon">
