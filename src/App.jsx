@@ -4,6 +4,7 @@ import { ShopContext } from "./components/ShopContext";
 import { Outlet } from "react-router-dom";
 
 function App() {
+  const [originalProducts, setOriginalProducts] = useState([]);
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [cartList, setCartList] = useState([]);
@@ -24,6 +25,7 @@ function App() {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
+        setOriginalProducts(data.products);
         setProducts(data.products);
       } catch (err) {
         console.error(err);
@@ -47,13 +49,13 @@ function App() {
   };
 
   const clearCart = () => {
-    if(cartList.length > 0 && confirm("Clear all items in cart?")){
+    if (cartList.length > 0 && confirm("Clear all items in cart?")) {
       setCartList([]);
       setCartCounter(0);
-    }else if(cartList.length == 0){
-      showScreenMessage("No items in cart")
+    } else if (cartList.length == 0) {
+      showScreenMessage("No items in cart");
     }
-  }
+  };
 
   const showScreenMessage = (msg) => {
     setMessage(msg);
@@ -62,7 +64,7 @@ function App() {
     setTimeout(() => {
       setShowMessage(false);
     }, 5000);
-  }
+  };
 
   const cartTracker = (item, cartList) => {
     var itemCounter = 0;
@@ -88,9 +90,9 @@ function App() {
 
       setCartList(updatedCart);
       setCartCounter(updatedCart.length);
-      if(e.target.value > 0){
+      if (e.target.value > 0) {
         showScreenMessage(`Updated cart to ${newQuantity} ${product.title}`);
-      }else{
+      } else {
         showScreenMessage(`Removed ${product.title}`);
       }
     }
@@ -98,7 +100,18 @@ function App() {
 
   const checkoutDummy = () => {
     showScreenMessage("Not enough coins in your e-wallet");
-  }
+  };
+
+  const filterProductList = (category) => {
+    if (category === "all") {
+      setProducts(originalProducts);
+    }else{
+      const filteredItems = originalProducts.filter(
+        (item) => item.category === category
+      );
+      setProducts(filteredItems);
+    } 
+  };
 
   if (error) return <div>{error}</div>;
 
@@ -114,6 +127,7 @@ function App() {
         clearCart,
         handleChange,
         checkoutDummy,
+        filterProductList,
         error,
         showMessage,
         showScreenMessage,
@@ -125,6 +139,5 @@ function App() {
     </ShopContext.Provider>
   );
 }
-
 
 export default App;
