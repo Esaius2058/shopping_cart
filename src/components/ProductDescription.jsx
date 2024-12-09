@@ -7,7 +7,7 @@ import starIcon from "../assets/star-solid.svg";
 
 const Description = () => {
   const { productId } = useParams();
-  const { products, addToCart, cartCounter } = useContext(ShopContext);
+  const { products, addToCart, cartCounter, message, showMessage} = useContext(ShopContext);
 
   const product = products.find((item) => item.id === parseInt(productId, 10));
 
@@ -27,7 +27,7 @@ const Description = () => {
           <h2>Shop</h2>
         </div>
         <div>
-          <Link to="cart" className="cart-icon">
+          <Link to="/shop/cart" className="cart-icon">
             <ShoppingCartIcon />
             <p>{cartCounter}</p>
           </Link>
@@ -61,6 +61,7 @@ const Description = () => {
           <button className="grid-item-button">Back to Shop</button>
         </Link>
       </div>
+			{showMessage && <div className="cart-info">{message}</div>}
     </div>
   );
 };
