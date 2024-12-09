@@ -54,13 +54,15 @@ const ProductList = () => {
         <div className="products-container" id="products-container">
           {products.map((product) => (
             <div key={product.id} className="product-item">
-              <button className="grid-item-shop">
-                <img src={product.thumbnail} alt={product} />
-                <div className="price-title">
-                  <p>{product.title}</p>
-                  <p>${product.price}</p>
-                </div>
-              </button>
+              <Link to={`/shop/${product.id}`}>
+                <button className="grid-item-shop">
+                  <img src={product.thumbnail} alt={product} />
+                  <div className="price-title">
+                    <p>{product.title}</p>
+                    <p>${product.price}</p>
+                  </div>
+                </button>
+              </Link>
               <button
                 className="grid-item-button"
                 onClick={() => addToCart(product)}
