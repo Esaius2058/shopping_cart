@@ -5,6 +5,7 @@ import Cart from "./ShoppingCart";
 import ProductList from "./Products";
 import Checkout from "./Checkout";
 import HomePage from "./Home";
+import Description from "./ProductDescription";
 
 const MainRoutes = () => {
   const routes = [
@@ -33,6 +34,10 @@ const MainRoutes = () => {
               path: "checkout",
               element: <Checkout />,
             },
+            {
+              path: ":productId",
+              element: <Description />,
+            }
           ],
         },
       ],
