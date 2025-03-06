@@ -10,11 +10,22 @@ const HomePage = () => {
     <div className="home-page">
       <div className="header">
         <div className="title-container">
-          <h1 className="home-title">DIGERO</h1>
+          <Link to="/">
+            <img
+              src={"src/assets/house-laptop-solid.svg"}
+              alt="digero_logo"
+              className="digero_logo"
+            />
+          </Link>
+          <Link to="/" className="link-title">
+            <h1 className="home-title">DIGERO</h1>
+          </Link>
         </div>
         <div className="nav-container">
           <nav className="nav-bar">
-            <Link to="/shop" className="link">SHOP</Link>
+            <Link to="/shop" className="link">
+              SHOP
+            </Link>
             <Link to="/shop/cart" className="cart-icon">
               <ShoppingCartIcon />
               <p>{cartCounter}</p>
@@ -41,7 +52,9 @@ const HomePage = () => {
                 />
               </div>
             ))}
-            <Link to="/shop" className="link">Shop Now</Link>
+            <Link to="/shop" className="link">
+              Shop Now
+            </Link>
           </div>
         </div>
         <div className="product-wrapper">
@@ -56,7 +69,9 @@ const HomePage = () => {
                 />
               </div>
             ))}
-            <Link to="/shop" className="link">Shop Now</Link>
+            <Link to="/shop" className="link">
+              Shop Now
+            </Link>
           </div>
         </div>
         <div className="product-wrapper">
@@ -71,7 +86,9 @@ const HomePage = () => {
                 />
               </div>
             ))}
-            <Link to="/shop" className="link">Shop Now</Link>
+            <Link to="/shop" className="link">
+              Shop Now
+            </Link>
           </div>
         </div>
         <div className="product-wrapper">
@@ -86,7 +103,9 @@ const HomePage = () => {
                 />
               </div>
             ))}
-            <Link to="/shop" className="link">Shop Now</Link>
+            <Link to="/shop" className="link">
+              Shop Now
+            </Link>
           </div>
         </div>
       </div>
