@@ -8,35 +8,36 @@ import HomePage from "./Home";
 import Description from "./ProductDescription";
 
 const MainRoutes = () => {
+  // Define an array of route configurations
   const routes = [
     {
-      path: "/",
-      element: <App />,
-      errorElement: <ErrorPage />,
-      children: [
+      path: "/", // Root path of the application
+      element: <App />, // Main application component that acts as a wrapper
+      errorElement: <ErrorPage />, // Error page in case of navigation errors
+      children: [ // Nested routes inside App component
         {
-          index:true,
-          element: <HomePage />,
+          index: true, // Default route when visiting "/"
+          element: <HomePage />, // Home page component
         },
         {
-          path: "shop",
-          element: <ShopWrapper />,
-          children: [
+          path: "shop", // Route for the shop section
+          element: <ShopWrapper />, // Wrapper for shop-related pages
+          children: [ // Nested routes inside ShopWrapper
             {
-              path: "",
-              element: <ProductList />,
+              path: "", // Default path when visiting "/shop"
+              element: <ProductList />, // Displays list of products
             },
             {
-              path: "cart",
-              element: <Cart />,
+              path: "cart", // Route for shopping cart
+              element: <Cart />, // Shopping cart component
             },
             {
-              path: "checkout",
-              element: <Checkout />,
+              path: "checkout", // Route for the checkout page
+              element: <Checkout />, // Checkout component
             },
             {
-              path: ":productId",
-              element: <Description />,
+              path: ":productId", // Dynamic route for product descriptions (e.g., "/shop/1")
+              element: <Description />, // Product description component
             }
           ],
         },
@@ -44,7 +45,7 @@ const MainRoutes = () => {
     },
   ];
 
-  return routes;
+  return routes; // Return the defined routes
 };
 
-export default MainRoutes;
+export default MainRoutes; // Export the MainRoutes component
