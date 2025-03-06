@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { ShopContext } from "./ShopContext";
 import { Link } from "react-router-dom";
-import HomeIcon from "../assets/home_icon";
 import ShoppingCartIcon from "../assets/shoppingcart_icon";
 
 const ProductList = () => {
@@ -20,37 +19,42 @@ const ProductList = () => {
 
   return (
     <div className="products-body">
-      <div className="products-header">
-        <div className="home-icon">
+      <div className="products-header"> {/*Header*/}
+        <div className="title-container">
           <Link to="/">
-            <HomeIcon />
+            <img
+              src={"src/assets/house-laptop-solid.svg"}
+              alt="digero_logo"
+              className="digero_logo"
+            />
+          </Link>
+          <Link to="/" className="link-title">
+            <h1 className="home-title">DIGERO</h1>
           </Link>
         </div>
-        <div className="products-title">
-          <h2>Shop</h2>
-        </div>
-        <div>
-          <Link to="cart" className="cart-icon">
-            <ShoppingCartIcon />
-            <p>{cartCounter}</p>
-          </Link>
+        <div className="categories-cart">
+          <div className="product-categories">
+            <select
+              name="categories"
+              id="categories"
+              onChange={(e) => filterProductList(e.target.value)}
+            >
+              <option value="all">All Products</option>
+              <option value="beauty">Beauty Products</option>
+              <option value="fragrances">Fragrances</option>
+              <option value="furniture">Furniture</option>
+              <option value="groceries">Groceries</option>
+            </select>
+          </div>
+          <div>
+            <Link to="cart" className="cart-icon">
+              <ShoppingCartIcon />
+              <p>{cartCounter}</p>
+            </Link>
+          </div>
         </div>
       </div>
       <div className="product-details">
-        <div className="product-categories">
-          <label htmlFor="categories">Categories</label>
-          <select
-            name="categories"
-            id="categories"
-            onChange={(e) => filterProductList(e.target.value)}
-          >
-            <option value="all">All Products</option>
-            <option value="beauty">Beauty Products</option>
-            <option value="fragrances">Fragrances</option>
-            <option value="furniture">Furniture</option>
-            <option value="groceries">Groceries</option>
-          </select>
-        </div>
         <div className="products-container" id="products-container">
           {products.map((product) => (
             <div key={product.id} className="product-item">
