@@ -58,149 +58,53 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #242424;
-    background-color:#ddd;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-    color: #1a1a1a;
-  }
-  Link{
-    color: #1a1a1a;
-  }
-  body .header {
-    display: flex;
-    gap: 10px;
-    align-items: center; 
-    padding: 10px 15px; 
-    min-height: 60px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    font-size: larger;
-    width: 100%;
-    margin-bottom: 4rem;
-    color: #1a1a1a;
-  }
-  .grid-item-button{
-    width: 12rem;
-    background-color: rgb(2, 75, 75);
-    color: #f9f9f9;
-  }
-  body .products-header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .link{
-    color: rgb(5, 116, 116);
-  }
-  .title-container h1{
-    font-size: 2rem;
-    border: 2px solid rgb(5, 116, 116);
-    padding: 3px;
-  }
-  body .home-title {
-    margin: 0; /* Removes default margin */
-    font-size: 24px;
-    font-weight: bold;
-    color: rgb(5, 116, 116); /* Dark gray color */
-  }
-  body .product-wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0.5rem;
-    background-color: #f9f9f9;
-    color: #242424;
-    box-sizing: border-box;
-    padding: 2rem;
-    gap: 1rem;
-  }
-  body .grid-item{
-    background-color:#ddd;
-  }
-  .checkout-button, .clear-cart {
-    background-color: rgb(2, 75, 75);
-    color: white;
-  }
-  
-}
-
-/* Responsive Typography */
-@media screen and (max-width: 600px) {
-  .header {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .nav-bar {
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .title-container h1 {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-
-  .display-products {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .products-container-beauty img {
-    max-width: 80px;
-    max-height: 80px;
-  }
+.link:hover{
+  color: aqua;
 }
 
 /* Improve Mobile Touch Targets */
-@media (max-width: 480px) {
-  .nav-bar a {
-    padding: 10px;
-  }
-
-  .cart-icon {
-    flex-direction: column;
-  }
+.link{
+  color: rgba(6, 146, 141, 0.971);
 }
 
-.link{
-  color: rgb(5, 131, 131);
+.link-title{
+  color: whitesmoke;
 }
 
 .products-body{
   display: flex;
 }
 
+.products-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.categories-cart{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
 .product-details{
   display: flex;
-  justify-content: space-evenly;
+  place-content: center;
   width: 1200px;
 }
 
-.product-categories{
-  display: flex;
-  flex-direction: column;
-  margin-top: 5rem;
-  gap: 0.5rem;
-}
 
 select{
-  height: 3rem;
+  height: 2.3rem;
   min-width: 8rem;
   text-align: center;
   font-size: medium;
@@ -247,7 +151,7 @@ select:hover{
   object-fit: cover;
 }
 
-.product-container > div {
+/*.product-container > div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -257,21 +161,7 @@ select:hover{
   border: 1px solid #ddd;
   padding: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.products-header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1a1a1a;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
+}*/
 
 .cart-info, .checkout-dummy{
   position: fixed;
@@ -307,6 +197,11 @@ select:hover{
 
 /* Header Styling */
 .header {
+  position: fixed; /* Fixes the header to the top */
+  top: 0; /* Ensures it stays at the very top */
+  left: 0;
+  width: 100%; /* Makes it span the full width */
+  z-index: 1000; /* Ensures it stays above other elements */
   display: flex;
   gap: 10px;
   align-items: center; 
@@ -327,15 +222,18 @@ select:hover{
 
 .title-container h1{
   font-size: 2rem;
-  border: 2px solid darkgray;
   padding: 3px;
+  border-radius: 10px;
 }
 
 .home-title {
   margin: 0; /* Removes default margin */
   font-size: 24px;
   font-weight: bold;
-  color: darkgray; /* Dark gray color */
+}
+
+.digero_logo{
+  width: 3.0rem;
 }
 
 /* Navigation Container */
@@ -351,7 +249,8 @@ select:hover{
 }
 
 .intro{
-  margin-bottom: 5rem;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
 }
 
 .body {
@@ -483,4 +382,181 @@ select:hover{
 .rating-star{
   width: 16px;
   margin-left: 0.2rem;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #242424;
+    background-color:#ddd;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+    color: #1a1a1a;
+  }
+  
+  Link{
+    color: #1a1a1a;
+  }
+
+  .header {
+    display: flex;
+    gap: 10px;
+    align-items: center; 
+    padding: 10px 15px; 
+    min-height: 60px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    font-size: larger;
+    width: 100%;
+    margin-bottom: 4rem;
+    color: #1a1a1a;
+  }
+  .grid-item-button{
+    width: 12rem;
+    background-color: rgb(2, 75, 75);
+    color: #f9f9f9;
+  }
+  body .products-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .title-container{
+    display: flex;
+    flex-direction: row;
+  }
+  .title-container h1{
+    font-size: 2rem;
+    padding: 3px;
+  }
+  body .home-title {
+    margin: 0; /* Removes default margin */
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(5, 116, 116);
+  }
+  body .product-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem;
+    background-color: #f9f9f9;
+    color: #242424;
+    box-sizing: border-box;
+    padding: 2rem;
+    gap: 1rem;
+  }
+  body .grid-item{
+    background-color:#ddd;
+  }
+  .checkout-button, .clear-cart {
+    background-color: rgb(2, 75, 75);
+    color: white;
+  }
+}
+
+/* <478px, 600px, 601px, 768px, 992px, 1200px*/
+@media only screen and (max-width: 478px) {
+  .products-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+    align-items: center;
+  }
+
+
+  .grid-item-shop{
+    width: 10rem;
+    height: 14rem;
+  }
+  
+  .grid-item-button{
+    width: 10rem;
+    background-color: rgb(2, 75, 75);
+  }
+
+  select{
+    height: 2rem;
+    min-width: 8rem;
+    width: 5rem;
+    text-align: center;
+    font-size: small;
+    border: 0;
+    border-radius: 1rem;
+  }
+  
+  select:hover{
+    border: 1px solid rgb(2, 75, 75);
+    cursor: pointer;
+  }
+  
+  .digero_logo{
+    width: 2.0rem;
+  }
+
+  .title-container h1{
+    font-size: 1.3rem;
+    padding: 3px;
+    border-radius: 10px;
+  }
+
+  .intro{
+    padding: 0.5rem;
+  }
+}
+
+@media only screen and (min-width: 479px) {
+  .products-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+    align-items: center;
+  }
+}
+
+
+
+@media only screen and (min-width: 646px) {
+  .products-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 998px) {
+  .products-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+  }
+
+  .product-details{
+    display: flex;
+    place-content: center;
+    width: 1200px;
+  }
 }
