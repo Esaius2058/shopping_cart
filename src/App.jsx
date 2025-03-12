@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import { ShopContext } from "./components/ShopContext";
 import { Outlet } from "react-router-dom";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
   // State variables for managing products, cart, and messages
@@ -126,7 +127,7 @@ function App() {
   };
 
   // Display error message if there's a problem fetching data
-  if (error) return <div>{error}</div>;
+  if (error) return <ErrorPage err={error.message || "Error while fetching resources."} />;
 
   return (
     <ShopContext.Provider
