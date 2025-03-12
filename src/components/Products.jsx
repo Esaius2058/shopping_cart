@@ -19,7 +19,9 @@ const ProductList = () => {
 
   return (
     <div className="products-body">
-      <div className="products-header"> {/*Header*/}
+      <div className="products-header">
+        {" "}
+        {/*Header*/}
         <div className="title-container">
           <Link to="/">
             <img
