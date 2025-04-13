@@ -63,8 +63,8 @@ const About = () => {
             </div>
             <div className="about-section">
                 <div className="about-illustration">
-                    <img src={"src/assets/handshake-solid.svg"} alt={"telescope"} />
-                    <h1>Let's stay connected</h1>
+                    <img src={"src/assets/link-solid.svg"} alt={"telescope"} />
+                    <h1>Talk To Us</h1>
                 </div>
                 <div className="about-description">
                     <p>
