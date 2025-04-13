@@ -1,112 +1,125 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ShopContext } from "./ShopContext";
-import ShoppingCartIcon from "../assets/shoppingcart_icon";
+import Navbar from "./Navbar";
 
 const HomePage = () => {
-  const { products, cartCounter } = useContext(ShopContext);
+  const { products } = useContext(ShopContext);
 
   return (
     <div className="home-page">
-      <div className="header">
-        <div className="title-container">
-          <Link to="/">
-            <img
-              src={"src/assets/house-laptop-solid.svg"}
-              alt="digero_logo"
-              className="digero_logo"
-            />
-          </Link>
-          <Link to="/" className="link-title">
-            <h1 className="home-title">DIGERO</h1>
-          </Link>
-        </div>
-        <div className="nav-container">
-          <nav className="nav-bar">
-            <Link to="/shop" className="link">
-              SHOP
-            </Link>
-            <Link to="/shop/cart" className="cart-icon">
-              <ShoppingCartIcon />
-              <p>{cartCounter}</p>
-            </Link>
-          </nav>
-        </div>
-      </div>
-      <div className="intro">
-        <p>
-          Discover a world of variety and charm at DIGERO, your one-stop shop
+      <Navbar />
+      <div className="hero">
+        <h1>Find What Moves You at DIGERO</h1>
+        <p className="hero-tagline">
+          Discover a world of variety and charm at DIGERO - your one-stop shop
           for unique and everyday essentials.
         </p>
       </div>
       <div className="body">
-        <div className="product-wrapper">
-          <h2>Beauty Products</h2>
-          <div className="display-products">
-            {products.slice(0, 4).map((product) => (
-              <div key={product.id} className="products-container-beauty">
-                <img
-                  src={product.thumbnail}
-                  alt={product.title}
-                  className="grid-item"
-                />
-              </div>
-            ))}
-            <Link to="/shop" className="link">
-              Shop Now
-            </Link>
+        <div className="product-wrappers">
+          <div className="product-wrapper">
+            <h2>Beauty Products</h2>
+            <div className="display-products">
+              {products.slice(0, 4).map((product) => (
+                <div key={product.id} className="products-container-beauty">
+                  <img
+                    src={product.thumbnail}
+                    alt={product.title}
+                    className="grid-item"
+                  />
+                </div>
+              ))}
+              <Link to="/shop" className="link">
+                <button className="shop-button">Shop Now</button>
+              </Link>
+            </div>
+          </div>
+          <div className="product-wrapper">
+            <h2>Fragrances</h2>
+            <div className="display-products">
+              {products.slice(6, 10).map((product) => (
+                <div key={product.id} className="products-container-beauty">
+                  <img
+                    src={product.thumbnail}
+                    alt={product.title}
+                    className="grid-item"
+                  />
+                </div>
+              ))}
+              <Link to="/shop" className="link">
+                <button className="shop-button">Shop Now</button>
+              </Link>
+            </div>
+          </div>
+          <div className="product-wrapper">
+            <h2>Furniture</h2>
+            <div className="display-products">
+              {products.slice(11, 15).map((product) => (
+                <div key={product.id} className="products-container-beauty">
+                  <img
+                    src={product.thumbnail}
+                    alt={product.title}
+                    className="grid-item"
+                  />
+                </div>
+              ))}
+              <Link to="/shop" className="link">
+                <button className="shop-button">Shop Now</button>
+              </Link>
+            </div>
+          </div>
+          <div className="product-wrapper">
+            <h2>Groceries</h2>
+            <div className="display-products">
+              {products.slice(20, 24).map((product) => (
+                <div key={product.id} className="products-container-beauty">
+                  <img
+                    src={product.thumbnail}
+                    alt={product.title}
+                    className="grid-item"
+                  />
+                </div>
+              ))}
+              <Link to="/shop" className="link">
+                <button className="shop-button">Shop Now</button>
+              </Link>
+            </div>
           </div>
         </div>
-        <div className="product-wrapper">
-          <h2>Fragrances</h2>
-          <div className="display-products">
-            {products.slice(6, 10).map((product) => (
-              <div key={product.id} className="products-container-beauty">
-                <img
-                  src={product.thumbnail}
-                  alt={product.title}
-                  className="grid-item"
-                />
-              </div>
-            ))}
-            <Link to="/shop" className="link">
-              Shop Now
-            </Link>
+        <div className="benefits">
+          <div className="benefits-1">
+            <img src={"src/assets/curated_essentials.jpg"} alt="essentials" />
+            <div>
+              <h1>Curated Essentials</h1>
+            </div>
+          </div>
+          <div className="benefits-1">
+            <img src={"src/assets/fast_delivery2.jpg"} alt={"delivery"} />
+            <div>
+              <h1>Fast Delivery</h1>
+            </div>
+          </div>
+          <div className="benefits-1">
+            <img src={"src/assets/quality_guaranteed.jpg"} alt={"quality"} />
+            <div>
+              <h1>Quality Guaranteed</h1>
+            </div>
           </div>
         </div>
-        <div className="product-wrapper">
-          <h2>Furniture</h2>
-          <div className="display-products">
-            {products.slice(11, 15).map((product) => (
-              <div key={product.id} className="products-container-beauty">
-                <img
-                  src={product.thumbnail}
-                  alt={product.title}
-                  className="grid-item"
-                />
-              </div>
-            ))}
-            <Link to="/shop" className="link">
-              Shop Now
-            </Link>
-          </div>
+      </div>
+      <div className="footer">
+        <div className="about">
+          <Link to="/about"><p>Get To Know Us</p></Link>
+          <Link><p>Return Policy</p></Link>
+          <Link><p>FAQs</p></Link>
         </div>
-        <div className="product-wrapper">
-          <h2>Groceries</h2>
-          <div className="display-products">
-            {products.slice(20, 24).map((product) => (
-              <div key={product.id} className="products-container-beauty">
-                <img
-                  src={product.thumbnail}
-                  alt={product.title}
-                  className="grid-item"
-                />
-              </div>
-            ))}
-            <Link to="/shop" className="link">
-              Shop Now
-            </Link>
-          </div>
+        <div className="social-media">
+          <Link><img src={"src/assets/phone-solid.svg"} alt={"phone"} /></Link>
+          <Link><img src={"src/assets/envelope-solid.svg"} alt={"email"} /></Link>
+          <Link><img src={"src/assets/instagram-brands.svg"} alt={"instagram"} /></Link>
+          <Link><img src={"src/assets/x-twitter-brands.svg"} alt={"x-twitter"} /></Link>
+          <Link><img src={"src/assets/facebook-f-brands.svg"} alt={"facebook"} /></Link>
         </div>
       </div>
     </div>
