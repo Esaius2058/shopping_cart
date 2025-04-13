@@ -5,6 +5,7 @@ import Cart from "./ShoppingCart";
 import ProductList from "./Products";
 import Checkout from "./Checkout";
 import HomePage from "./Home";
+import About from "./About";
 import Description from "./ProductDescription";
 
 const MainRoutes = () => {
@@ -41,6 +42,10 @@ const MainRoutes = () => {
             }
           ],
         },
+        {
+          path: "about", // Route for the about page
+          element: <About />,
+        }
       ],
     },
   ];
