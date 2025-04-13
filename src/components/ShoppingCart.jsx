@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ShopContext } from "./ShopContext";
 import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 import HomeIcon from "../assets/home_icon";
 
 const Cart = () => {
@@ -20,25 +21,9 @@ const Cart = () => {
   );
 
   return (
-    <div className="cart-body">
-      <div className="cart-header">
-        <div className="products-header">
-          <div className="home-icon">
-            <Link to="/">
-              <HomeIcon />
-            </Link>
-          </div>
-          <div>
-            <h2>Shopping Cart</h2>
-          </div>
-          <div>
-            <Link to="/shop" className="cart-icon">
-              SHOP
-            </Link>
-          </div>
-        </div>
-      </div>
-      <div className="cart-container">
+    <div className="cart">
+      <Navbar />
+      <div className="cart-container cart-body">
         <div className="cart-items">
           {uniqueCartList.map((item) => (
             <div key={item.id} className="cart-item">
