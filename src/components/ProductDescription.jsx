@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import HomeIcon from "../assets/home_icon";
 import ShoppingCartIcon from "../assets/shoppingcart_icon";
+import Navbar from "./Navbar";
 import starIcon from "../assets/star-solid.svg"; 
 
 const Description = () => {
@@ -17,23 +18,9 @@ const Description = () => {
 
   return (
     <div className="product-description">
-      <div className="products-header">
-        <div className="home-icon">
-          <Link to="/">
-            <HomeIcon />
-          </Link>
-        </div>
-        <div className="products-title">
-          <h2>Shop</h2>
-        </div>
-        <div>
-          <Link to="/shop/cart" className="cart-icon">
-            <ShoppingCartIcon />
-            <p>{cartCounter}</p>
-          </Link>
-        </div>
-      </div>
-			<h3 className="product-description-title">{product.title}</h3>
+      <Navbar />
+      <div className="product-description-container">
+      <h3 className="product-description-title">{product.title}</h3>
       <div className="product-description-image">
         <img src={product.thumbnail} alt={product.title} />
       </div>
@@ -62,6 +49,7 @@ const Description = () => {
         </Link>
       </div>
 			{showMessage && <div className="cart-info">{message}</div>}
+      </div>
     </div>
   );
 };
