@@ -3,6 +3,7 @@
   padding: 0;
   text-align: center;
   width: 100%;
+  background-color: #121212;
 }
 
 body, html {
@@ -11,3 +12,9 @@ body, html {
 }
 
 
+@media (prefers-color-scheme: light) {
+  #root{
+    background-color: #e0e0e0;
+    color: #121212;
+  }
+}
