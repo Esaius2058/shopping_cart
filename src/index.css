@@ -1,4 +1,3 @@
-
 @import url("https://api.fontshare.com/v2/css?f[]=satoshi@700&f[]=clash-grotesk@500&display=swap");
 
 :root {
@@ -85,14 +84,11 @@ button:focus-visible {
 /*Navbar.jsx*/
 /* Header Styling */
 .header {
-  position: fixed; /* Fixes the header to the top */
   width: 100%; /* Makes it span the full width */
-  z-index: 1000; /* Ensures it stays above other elements */
   display: flex;
   gap: 20px;
   padding: 10px; 
   height: 64px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #1f1f1f;
   font-size: medium;
   width: 100%;
@@ -114,7 +110,8 @@ button:focus-visible {
   font-weight: bold;
 }
 .digero_logo{
-  width: 3.0rem;
+  width: 35px;
+  height: 35px;
 }
 /* Navigation Container */
 .nav-container {
@@ -367,7 +364,6 @@ select:hover{
 }
 .cart-container{
   display: flex;
-  margin-top: 4rem;
   flex-direction: column;
   margin-bottom: 2rem;
   max-width: 1280px;
@@ -445,6 +441,7 @@ select:hover{
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
   
 }
 .product-description-container{
@@ -627,80 +624,434 @@ select:hover{
 
 /* <478px, 600px, 601px, 768px, 992px, 1200px*/
 @media only screen and (max-width: 478px) {
-  .products-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    justify-content: center;
-    margin-bottom: 2rem;
-    margin-top: 5rem;
-    align-items: center;
-  }
-
-
-  .grid-item-shop{
-    width: 10rem;
-    height: 14rem;
-  }
-  
-  .grid-item-button{
-    width: 10rem;
-    background-color: #03777A;
-  }
-
-  select{
-    height: 2rem;
-    min-width: 8rem;
-    width: 5rem;
-    text-align: center;
-    font-size: small;
-    border: 0;
-    border-radius: 1rem;
-  }
-  
-  select:hover{
-    border: 1px solid #03777A;
-    cursor: pointer;
-  }
-  
+  /*Home Page*/
   .digero_logo{
     width: 2.0rem;
   }
-
-  .title-container h1{
-    font-size: 1.3rem;
+  .logo h1{
+    font-size: 22px;
     padding: 3px;
     border-radius: 10px;
   }
-
-  .intro{
-    padding: 0.5rem;
+  .nav-bar{
+    font-size: 15px;
+    width: 90px;
   }
+  .header{
+    height: 50px;
+  }
+  .size-6{
+    width: 25px;
+    height: 25px; 
+  }
+  .hero{
+    width: 100%;
+    height: 360px;
+  }
+  .hero-tagline{
+    font-size: 21px;
+    width: 300px;
+    height: 110px;
+  }
+  .hero h1{
+    font-size: 35px;
+    max-width: 400px;
+  }
+  /*HomePage Body*/
+.product-wrappers{
+  flex-wrap: wrap;
+}
+.shop-button{
+  width: 118px;
+}
+/*benefits*/
+.benefits-1{
+  gap: 20px;
+  padding: 40px;
+  height: 320px;
+}
+.benefits-1 img{
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+}
+.benefits-1 div{
+  width: 120px;
+  font-size: 8px;
+}
+/*Homepage Footer*/
+.about{
+  width: 420px;
+  height: 40px;
+  gap: 35px;
+}
+.about p{
+  font-size: 13px;
+}
+.social-media{
+  gap: 40px;
+}
+.social-media img{
+  width: 35px;
+  height: 35px;
+}
+
+/*Shop Page*/
+select{
+  height: 30px;
+  font-size: 13.5px;
+}
+.products-container {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 2rem;
+  margin-top: 5rem;
+}
+.grid-item-shop{
+  width: 10rem;
+  height: 15rem;
+}
+.grid-item-button{
+  width: 10rem;
+}
+
+/*Cart Page*/
+.cart-item{
+  grid-template-columns: repeat(2, 1fr);
+}
+.cart-info, .checkout-dummy{
+  bottom: 20px;
+  right: 20px;
+  font-size: 12px;
+}
+.checkout-button, .clear-cart {
+  font-size: 15px;
+}
+.item-image img{
+  max-width: 140px;
+  max-height: 140px;
+}
+.item-image{
+  width: 150px;
+  height: 150px;
+}
+.item-details{
+  display: flex;
+  flex-direction: column; 
+  gap: 5px;
+  align-items: center;
+}
+.item-details input{
+  width: 40px;
+  height: 20px;
+}
+
+/*Description*/
+.product-description-container{
+  width: 100%;
+  gap: 40px;
+  padding: 60px;
+}
+.product-description-image img{
+  width: 200px;
+  height: 200px;
+}
+.grid-item-button{
+  font-size: 15px;
+}
+
+/*About*/
+.about-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.about-illustration{
+  gap: 30px;
+  padding: 20px;
+}
+.about-illustration h1{
+  font-size: 30px;
+}
+.about-illustration img{
+  width: 40px;
+  height: 40px;
+}
+.about-description{
+  font-size: 20px;
+  padding: 20px;
+}
 }
 
 @media only screen and (min-width: 479px) {
+    /*Home Page*/
+    .digero_logo{
+      width: 2.0rem;
+    }
+    .logo h1{
+      font-size: 22px;
+      padding: 3px;
+      border-radius: 10px;
+    }
+    .nav-bar{
+      font-size: 15px;
+      width: 90px;
+    }
+    .header{
+      height: 50px;
+    }
+    .size-6{
+      width: 25px;
+      height: 25px; 
+    }
+    .hero{
+      width: 100%;
+      height: 360px;
+    }
+    .hero-tagline{
+      font-size: 21px;
+      width: 300px;
+      height: 110px;
+    }
+    .hero h1{
+      font-size: 35px;
+      max-width: 400px;
+    }
+    /*HomePage Body*/
+  .product-wrappers{
+    flex-wrap: wrap;
+  }
+  .shop-button{
+    width: 118px;
+  }
+  /*benefits*/
+  .benefits-1{
+    gap: 20px;
+    padding: 40px;
+    height: 320px;
+  }
+  .benefits-1 img{
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+  }
+  .benefits-1 div{
+    width: 120px;
+    font-size: 8px;
+  }
+  /*Homepage Footer*/
+  .about{
+    width: 420px;
+    height: 40px;
+    gap: 35px;
+  }
+  .about p{
+    font-size: 13px;
+  }
+  .social-media{
+    gap: 40px;
+  }
+  .social-media img{
+    width: 35px;
+    height: 35px;
+  }
+  
+  /*Shop Page*/
+  select{
+    height: 30px;
+    font-size: 13.5px;
+  }
   .products-container {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    justify-content: center;
+    gap: 15px;
     margin-bottom: 2rem;
     margin-top: 5rem;
+  }
+  .grid-item-shop{
+    width: 10rem;
+    height: 15rem;
+  }
+  .grid-item-button{
+    width: 10rem;
+  }
+  
+  /*Cart Page*/
+  .cart-item{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cart-info, .checkout-dummy{
+    bottom: 20px;
+    right: 20px;
+    font-size: 12px;
+  }
+  .checkout-button, .clear-cart {
+    font-size: 15px;
+  }
+  .item-image img{
+    max-width: 140px;
+    max-height: 140px;
+  }
+  .item-image{
+    width: 150px;
+    height: 150px;
+  }
+  .item-details{
+    display: flex;
+    flex-direction: column; 
+    gap: 5px;
     align-items: center;
+  }
+  .item-details input{
+    width: 40px;
+    height: 20px;
+  }
+  
+  /*Description*/
+  .product-description-container{
+    width: 100%;
+    gap: 40px;
+    padding: 60px;
+  }
+  .product-description-image img{
+    width: 200px;
+    height: 200px;
+  }
+  .grid-item-button{
+    font-size: 15px;
+  }
+  
+  /*About*/
+  .about-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .about-illustration{
+    gap: 30px;
+    padding: 20px;
+  }
+  .about-illustration h1{
+    font-size: 30px;
+  }
+  .about-illustration img{
+    width: 40px;
+    height: 40px;
+  }
+  .about-description{
+    font-size: 20px;
+    padding: 20px;
   }
 }
 
-
-
 @media only screen and (min-width: 646px) {
+    /*Home Page*/
+    .digero_logo{
+      width: 35px;
+      height: 35px;
+    }
+    /*HomePage Body*/
+  .product-wrappers{
+    flex-wrap: wrap;
+  }
+  .shop-button{
+    width: 118px;
+  }
+  .benefits-1 img{
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+  }
+  .benefits-1 div{
+    width: 250px;
+    font-size: 8px;
+  }
+  /*Homepage Footer*/
+  .about p{
+    font-size: 18px;
+  }
+  .social-media{
+    gap: 40px;
+  }
+  .social-media img{
+    width: 45px;
+    height: 45px;
+  }
+  
+  /*Shop Page*/
+  select{
+    height: 40px;
+    font-size: 15px;
+  }
   .products-container {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    justify-content: center;
-    margin-bottom: 2rem;
-    margin-top: 5rem;
-    align-items: center;
+  }
+  .grid-item-shop{
+    width: 10rem;
+    height: 15rem;
+  }
+  .grid-item-button{
+    width: 10rem;
+  }
+  
+  /*Cart Page*/
+  .cart-item{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cart-info, .checkout-dummy{
+    bottom: 20px;
+    right: 20px;
+    font-size: 12px;
+  }
+  .checkout-button, .clear-cart {
+    font-size: 15px;
+  }
+  .item-image img{
+    max-width: 200px;
+    max-height: 200px;
+  }
+  .item-image{
+    width: 220px;
+    height: 220px;
+  }
+  .item-details input{
+    width: 40px;
+    height: 20px;
+  }
+  
+  /*Description*/
+  .product-description-container{
+    width: 100%;
+    gap: 40px;
+    padding: 60px;
+  }
+  .product-description-image img{
+    width: 200px;
+    height: 200px;
+  }
+  .grid-item-button{
+    font-size: 15px;
+  }
+  
+  /*About*/
+  .about-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .about-illustration{
+    gap: 30px;
+    padding: 20px;
+  }
+  .about-illustration h1{
+    font-size: 30px;
+  }
+  .about-illustration img{
+    width: 40px;
+    height: 40px;
+  }
+  .about-description{
+    font-size: 20px;
+    padding: 20px;
   }
 }
 
