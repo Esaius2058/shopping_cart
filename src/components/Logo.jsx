@@ -8,7 +8,7 @@ const Logo = () => {
         <div className="logo">
             <Link to="/">
                 <img
-                    src={"src/assets/house-laptop-solid.svg"}
+                    src={"/house-laptop-solid.svg"}
                     alt="digero_logo"
                     className="digero_logo"
                 />

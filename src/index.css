@@ -78,6 +78,7 @@ button:focus-visible {
 .home-page {
   display: flex;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh;
   width: 100%;
 }
@@ -125,26 +126,23 @@ button:focus-visible {
 }
 /*Hero*/
 .hero{
-  position: relative;
   width: 100%;
-  height: 360px;
   display: flex;
   flex-direction: column;
-  margin-top: 4rem;
   justify-content: center;
   align-items: center;
   gap: 20px;
   padding: 40px;
 }
-.hero-tagline{
+.hero p{
   font-size: 28px;
   font-weight: medium;
   line-height: 1.5em;
-  width: 524px;
-  height: 126px;
+  max-width: 524px;
 }
-.hero-tagline h1{
+.hero h1{
   font-family: 'Satoshi', sans-serif;
+  max-width: 100%;
 }
 /*HomePage Body*/
 .body {
@@ -644,19 +642,6 @@ select:hover{
     width: 25px;
     height: 25px; 
   }
-  .hero{
-    width: 100%;
-    height: 360px;
-  }
-  .hero-tagline{
-    font-size: 21px;
-    width: 300px;
-    height: 110px;
-  }
-  .hero h1{
-    font-size: 35px;
-    max-width: 400px;
-  }
   /*HomePage Body*/
 .product-wrappers{
   flex-wrap: wrap;
@@ -803,19 +788,6 @@ select{
     .size-6{
       width: 25px;
       height: 25px; 
-    }
-    .hero{
-      width: 100%;
-      height: 360px;
-    }
-    .hero-tagline{
-      font-size: 21px;
-      width: 300px;
-      height: 110px;
-    }
-    .hero h1{
-      font-size: 35px;
-      max-width: 400px;
     }
     /*HomePage Body*/
   .product-wrappers{
@@ -966,15 +938,23 @@ select{
     font-size: 8px;
   }
   /*Homepage Footer*/
+  .footer{
+    width: 100%;
+  }
+  .about{
+    width: 100%;
+    height: 40px;
+    gap: 35px;
+  }
   .about p{
-    font-size: 18px;
+    font-size: 20px;
   }
   .social-media{
-    gap: 40px;
+    gap: 100px;
   }
   .social-media img{
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
   }
   
   /*Shop Page*/
@@ -1056,17 +1036,148 @@ select{
 }
 
 @media only screen and (min-width: 998px) {
-  .products-container {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 1rem;
-    margin-bottom: 2rem;
-    margin-top: 5rem;
+    /*Home Page*/
+    .digero_logo{
+      width: 40px;
+      height: 40px;
+    }
+    .logo h1{
+      font-size: 30px;
+    }
+    .nav-bar{
+      font-size: 18px;
+      width: fit-content;
+    }
+    .header{
+      height: 64px;
+    }
+    .size-6{
+      width: 30px;
+      height: 30px; 
+    }
+    .hero-tagline{
+      font-size: 30px;
+    }
+    .hero h1{
+      font-size: 60px;
+    }
+    /*HomePage Body*/
+  .product-wrappers{
+    flex-wrap: wrap;
   }
+  .shop-button{
+    width: 118px;
+  }
+  /*benefits*/
+  .benefits-1{
+    gap: 20px;
+    padding: 40px;
 
-  .product-details{
-    display: flex;
-    place-content: center;
-    width: 1200px;
+  }
+  .benefits-1 img{
+    width: 320px;
+    height: 240px;
+    border-radius: 20px;
+  }
+  .benefits-1 div{
+    font-size: 15px;
+    width: 500px;
+  }
+  /*Homepage Footer*/
+  .footer{
+    width: 100%;
+  }
+  .about{
+    width: 100%;
+    height: 40px;
+    gap: 35px;
+  }
+  .about p{
+    font-size: 20px;
+  }
+  .social-media{
+    gap: 100px;
+  }
+  .social-media img{
+    width: 40px;
+    height: 40px;
+  }
+  
+  /*Shop Page*/
+  select{
+    height: 32px;
+    font-size: 18px;
+  }
+  .products-container {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 25px;
+  }
+  .grid-item-shop{
+    width: 12rem;
+    height: 18rem;
+  }
+  .grid-item-button{
+    width: 12rem;
+  }
+  
+  /*Cart Page*/
+  .cart-item{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cart-info, .checkout-dummy{
+    bottom: 20px;
+    right: 60px;
+    font-size: 15px;
+  }
+  .checkout-button, .clear-cart {
+    font-size: 18px;
+  }
+  .item-image img{
+    max-width: 180px;
+    max-height: 180px;
+  }
+  .item-image{
+    width: 200px;
+    height: 200px;
+  }
+  .item-details p{
+    font-size: 18px;
+  }
+  .item-details input{
+    width: 60px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  /*Description*/
+  .product-description-container{
+    width: 100%;
+    gap: 40px;
+    padding: 60px;
+  }
+  .product-description-image img{
+    width: 220px;
+    height: 220px;
+  }
+  .grid-item-button{
+    font-size: 15px;
+  }
+  
+  /*About*/
+  .about-illustration{
+    gap: 30px;
+    padding: 20px;
+  }
+  .about-illustration h1{
+    font-size: 50px;
+  }
+  .about-illustration img{
+    width: 60px;
+    height: 60px;
+  }
+  .about-description{
+    font-size: 30px;
+    padding: 20px;
   }
 }

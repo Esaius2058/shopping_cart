@@ -8,7 +8,7 @@ const About = () => {
             <div className="about-hero"></div>
             <div className="about-section">
                 <div className="about-illustration">
-                    <img src={"src/assets/shopping-cart.svg"} alt={"shopping-cart"} />
+                    <img src={"/shopping-cart.svg"} alt={"shopping-cart"} />
                     <h1>About Digero</h1>
                 </div>
                 <div className="about-description">
@@ -20,7 +20,7 @@ const About = () => {
             </div>
             <div className="about-section">
                 <div className="about-illustration">
-                    <img src={"src/assets/shopping-bag.svg"} alt={"compass"} />
+                    <img src={"/shopping-bag.svg"} alt={"compass"} />
                     <h1>Our Mission</h1>
                 </div>
                 <div className="about-description">
@@ -34,7 +34,7 @@ const About = () => {
             </div>
             <div className="about-section">
                 <div className="about-illustration">
-                    <img src={"src/assets/telescope.svg"} alt={"telescope"} />
+                    <img src={"/telescope.svg"} alt={"telescope"} />
                     <h1>Our Vision</h1>
                 </div>
                 <div className="about-description">
@@ -48,7 +48,7 @@ const About = () => {
             </div>
             <div className="about-section">
                 <div className="about-illustration">
-                    <img src={"src/assets/handshake-solid.svg"} alt={"telescope"} />
+                    <img src={"/handshake-solid.svg"} alt={"telescope"} />
                     <h1>Our Commitment</h1>
                 </div>
                 <div className="about-description">
@@ -63,7 +63,7 @@ const About = () => {
             </div>
             <div className="about-section">
                 <div className="about-illustration">
-                    <img src={"src/assets/link-solid.svg"} alt={"telescope"} />
+                    <img src={"/link-solid.svg"} alt={"telescope"} />
                     <h1>Talk To Us</h1>
                 </div>
                 <div className="about-description">

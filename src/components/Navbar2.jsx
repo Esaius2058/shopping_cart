@@ -1,4 +1,3 @@
-import ShoppingCartIcon from "../assets/shoppingcart_icon";
 import { useContext } from "react";
 import { ShopContext } from "./ShopContext";
 import { Link } from "react-router-dom";

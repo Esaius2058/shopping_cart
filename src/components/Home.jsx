@@ -89,19 +89,19 @@ const HomePage = () => {
         </div>
         <div className="benefits">
           <div className="benefits-1">
-            <img src={"src/assets/curated_essentials.jpg"} alt="essentials" />
+            <img src={"/curated_essentials.jpg"} alt="essentials" />
             <div>
               <h1>Curated Essentials</h1>
             </div>
           </div>
           <div className="benefits-1">
-            <img src={"src/assets/fast_delivery2.jpg"} alt={"delivery"} />
+            <img src={"/fast_delivery2.jpg"} alt={"delivery"} />
             <div>
               <h1>Fast Delivery</h1>
             </div>
           </div>
           <div className="benefits-1">
-            <img src={"src/assets/quality_guaranteed.jpg"} alt={"quality"} />
+            <img src={"/quality_guaranteed.jpg"} alt={"quality"} />
             <div>
               <h1>Quality Guaranteed</h1>
             </div>
@@ -115,11 +115,11 @@ const HomePage = () => {
           <Link><p>FAQs</p></Link>
         </div>
         <div className="social-media">
-          <Link><img src={"src/assets/phone-solid.svg"} alt={"phone"} /></Link>
-          <Link><img src={"src/assets/envelope-solid.svg"} alt={"email"} /></Link>
-          <Link><img src={"src/assets/instagram-brands.svg"} alt={"instagram"} /></Link>
-          <Link><img src={"src/assets/x-twitter-brands.svg"} alt={"x-twitter"} /></Link>
-          <Link><img src={"src/assets/facebook-f-brands.svg"} alt={"facebook"} /></Link>
+          <Link><img src={"/phone-solid.svg"} alt={"phone"} /></Link>
+          <Link><img src={"/envelope-solid.svg"} alt={"email"} /></Link>
+          <Link><img src={"/instagram-brands.svg"} alt={"instagram"} /></Link>
+          <Link><img src={"/x-twitter-brands.svg"} alt={"x-twitter"} /></Link>
+          <Link><img src={"/facebook-f-brands.svg"} alt={"facebook"} /></Link>
         </div>
       </div>
     </div>

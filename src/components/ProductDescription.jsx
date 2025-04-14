@@ -1,10 +1,10 @@
 import { ShopContext } from "./ShopContext";
 import { useContext } from "react";
 import { useParams, Link } from "react-router-dom";
-import HomeIcon from "../assets/home_icon";
-import ShoppingCartIcon from "../assets/shoppingcart_icon";
+import HomeIcon from "../../public/home_icon";;
+import ShoppingCartIcon from "../../public/shoppingcart_icon";
 import Navbar from "./Navbar";
-import starIcon from "../assets/star-solid.svg";
+import starIcon from "/star-solid.svg";
 
 const Description = () => {
   const { productId } = useParams();

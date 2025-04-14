@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ShopContext } from "./ShopContext";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
-import HomeIcon from "../assets/home_icon";
+import HomeIcon from "../../public/home_icon";
 
 const Cart = () => {
   const {
